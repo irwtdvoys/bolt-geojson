@@ -61,5 +61,18 @@
 
 			return new Point($point);
 		}
+
+		public function toPolygon()
+		{
+			$ring = array(
+				array($this->coordinates[0]->lng(), $this->coordinates[0]->lat()),
+				array($this->coordinates[1]->lng(), $this->coordinates[0]->lat()),
+				array($this->coordinates[1]->lng(), $this->coordinates[1]->lat()),
+				array($this->coordinates[0]->lng(), $this->coordinates[1]->lat()),
+				array($this->coordinates[0]->lng(), $this->coordinates[0]->lat())
+			);
+
+			return new Polygon(array("coordinates" => array($ring)));
+		}
 	}
 ?>
