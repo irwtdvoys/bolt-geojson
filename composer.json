@@ -1,0 +1,32 @@
+{
+    "name": "cruxoft/bolt-geojson",
+    "description": "GeoJSON module for Bolt",
+    "keywords": [
+        "bolt",
+        "geojson"
+    ],
+    "type": "library",
+    "authors": [
+        {
+            "name": "Steve Adams"
+        }
+    ],
+    "require": {
+        "php": ">=5.6",
+	"cruxoft/bolt-core": "dev-develop"
+    },
+    "require-dev": {
+    },
+    "suggest": {},
+    "autoload": {
+        "psr-4": {
+            "Bolt\\GeoJson": "src"
+        }
+    },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/irwtdvoys/bolt-core"
+        }
+    ]
+}
