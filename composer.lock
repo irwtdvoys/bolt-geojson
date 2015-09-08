@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "9b1b722d9fc1583d8c86e337481d48b2",
+    "hash": "d7b7a347a476a97d35dcd366d73fbd22",
     "packages": [
         {
             "name": "cruxoft/bolt-core",
