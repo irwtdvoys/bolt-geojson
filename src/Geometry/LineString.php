@@ -7,9 +7,12 @@
 		{
 			parent::__construct($data);
 
-			if (count($this->coordinates) < 2)
+			if ($data !== null)
 			{
-				$this->coordinates = null;
+				if (count($this->coordinates) < 2)
+				{
+					throw new \Exception("LineString requires at least 2 points");
+				}
 			}
 		}
 	}

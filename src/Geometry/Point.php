@@ -2,22 +2,17 @@
 	namespace Bolt\GeoJson\Geometry;
 
 	use \Bolt\GeoJson\Geometry;
-	use \Bolt\Arrays;
 
 	class Point extends Geometry
 	{
 		public function __construct($data = null)
 		{
-			if (Arrays::type($data) == "numeric" && count($data) == 2)
-			{
-				$data = array(
-					"coordinates" => $data
-				);
-			}
-
 			parent::__construct($data);
 
-			$this->coordinates = new Position($this->coordinates);
+			if ($data !== null)
+			{
+				$this->coordinates = new Position($this->coordinates);
+			}
 		}
 
 		public function lat($value = null)

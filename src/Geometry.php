@@ -2,6 +2,7 @@
 	namespace Bolt\GeoJson;
 
 	use \Bolt\Base;
+	use \Bolt\Arrays;
 
 	abstract class Geometry extends Base
 	{
@@ -10,6 +11,13 @@
 
 		public function __construct($data = null)
 		{
+			if (Arrays::type($data) == "numeric")
+			{
+				$data = array(
+					"coordinates" => $data
+				);
+			}
+
 			parent::__construct($data);
 			$this->type = $this->className(false);
 		}
