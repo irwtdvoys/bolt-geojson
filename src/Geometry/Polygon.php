@@ -9,9 +9,12 @@
 		{
 			parent::__construct($data);
 
-			foreach ($this->coordinates as &$next)
+			if ($data !== null)
 			{
-				$next = new LinearRing(array("coordinates" => $next));
+				foreach ($this->coordinates as &$next)
+				{
+					$next = new LinearRing($next);
+				}
 			}
 		}
 

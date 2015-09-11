@@ -9,9 +9,12 @@
 		{
 			parent::__construct($data);
 
-			foreach ($this->coordinates as &$next)
+			if ($data !== null)
 			{
-				$next = new Polygon($next);
+				foreach ($this->coordinates as &$next)
+				{
+					$next = new Polygon($next);
+				}
 			}
 		}
 

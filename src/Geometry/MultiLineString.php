@@ -9,9 +9,12 @@
 		{
 			parent::__construct($data);
 
-			foreach ($this->coordinates as &$next)
+			if ($data !== null)
 			{
-				$next = new LineString($next);
+				foreach ($this->coordinates as &$next)
+				{
+					$next = new LineString($next);
+				}
 			}
 		}
 

@@ -7,9 +7,17 @@
 		{
 			parent::__construct($data);
 
-			if (count($this->coordinates) < 4 || $this->first() != $this->last())
+			if ($data !== null)
 			{
-				$this->coordinates = null;
+				if (count($this->coordinates) < 4)
+				{
+					throw new \Exception("LinearRing requires at least 4 points");
+				}
+
+				if ($this->first() != $this->last())
+				{
+					throw new \Exception("First and last points must match");
+				}
 			}
 		}
 
