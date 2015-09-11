@@ -72,7 +72,7 @@
 				array($this->coordinates[0]->lng(), $this->coordinates[0]->lat())
 			);
 
-			return new Polygon(array("coordinates" => array($ring)));
+			return new Polygon(array($ring));
 		}
 	}
 ?>

@@ -11,7 +11,7 @@
 
 			foreach ($this->coordinates as &$next)
 			{
-				$next = new LineString(array("coordinates" => $next));
+				$next = new LineString($next);
 			}
 		}
 

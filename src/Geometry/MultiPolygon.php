@@ -11,7 +11,7 @@
 
 			foreach ($this->coordinates as &$next)
 			{
-				$next = new Polygon(array("coordinates" => $next));
+				$next = new Polygon($next);
 			}
 		}
 
