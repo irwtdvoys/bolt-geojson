@@ -4,20 +4,21 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "d7b7a347a476a97d35dcd366d73fbd22",
+    "hash": "091143a86ae7198a1f88a93b0130eda6",
+    "content-hash": "9f0b4bb252b5f24f193790adea3e815b",
     "packages": [
         {
             "name": "cruxoft/bolt-core",
-            "version": "dev-develop",
+            "version": "v0.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/irwtdvoys/bolt-core.git",
-                "reference": "cb069d99e2f1d5f2538d00196acac22f339d8cee"
+                "reference": "ad761a3c512dfdf526bd310612ca1ae16d11d77e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/irwtdvoys/bolt-core/zipball/cb069d99e2f1d5f2538d00196acac22f339d8cee",
-                "reference": "cb069d99e2f1d5f2538d00196acac22f339d8cee",
+                "url": "https://api.github.com/repos/irwtdvoys/bolt-core/zipball/ad761a3c512dfdf526bd310612ca1ae16d11d77e",
+                "reference": "ad761a3c512dfdf526bd310612ca1ae16d11d77e",
                 "shasum": ""
             },
             "require": {
@@ -32,28 +33,27 @@
                     "Bolt\\": "src/Bolt/"
                 }
             },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
             "authors": [
                 {
-                    "name": "Steve Adams"
+                    "name": "Steve Adams",
+                    "role": "Developer"
                 }
             ],
-            "description": "PHP Framework",
+            "description": "Core elements for the Bolt Framework",
             "keywords": [
                 "framework"
             ],
-            "support": {
-                "source": "https://github.com/irwtdvoys/bolt-core/tree/develop",
-                "issues": "https://github.com/irwtdvoys/bolt-core/issues"
-            },
-            "time": "2015-09-08 15:03:56"
+            "time": "2016-04-03 21:29:10"
         }
     ],
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "cruxoft/bolt-core": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
