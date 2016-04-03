@@ -4,20 +4,21 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "d7b7a347a476a97d35dcd366d73fbd22",
+    "hash": "6c310f76fd578eb6bdd187606b74b1ff",
+    "content-hash": "5c866b645858cb8890ed9bf8166b5da2",
     "packages": [
         {
             "name": "cruxoft/bolt-core",
-            "version": "dev-develop",
+            "version": "v0.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/irwtdvoys/bolt-core.git",
-                "reference": "cb069d99e2f1d5f2538d00196acac22f339d8cee"
+                "reference": "9e8b4c1040cbb1b3a3ee97739078c7b5988373d7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/irwtdvoys/bolt-core/zipball/cb069d99e2f1d5f2538d00196acac22f339d8cee",
-                "reference": "cb069d99e2f1d5f2538d00196acac22f339d8cee",
+                "url": "https://api.github.com/repos/irwtdvoys/bolt-core/zipball/9e8b4c1040cbb1b3a3ee97739078c7b5988373d7",
+                "reference": "9e8b4c1040cbb1b3a3ee97739078c7b5988373d7",
                 "shasum": ""
             },
             "require": {
@@ -32,6 +33,7 @@
                     "Bolt\\": "src/Bolt/"
                 }
             },
+            "notification-url": "https://packagist.org/downloads/",
             "authors": [
                 {
                     "name": "Steve Adams"
@@ -41,19 +43,13 @@
             "keywords": [
                 "framework"
             ],
-            "support": {
-                "source": "https://github.com/irwtdvoys/bolt-core/tree/develop",
-                "issues": "https://github.com/irwtdvoys/bolt-core/issues"
-            },
-            "time": "2015-09-08 15:03:56"
+            "time": "2016-04-03 19:39:49"
         }
     ],
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "cruxoft/bolt-core": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
