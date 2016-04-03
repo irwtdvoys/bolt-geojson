@@ -13,7 +13,7 @@
 	],
 	"require": {
 		"php": ">=5.6",
-		"cruxoft/bolt-core": "dev-develop"
+		"cruxoft/bolt-core": "v0.1.0"
 	},
 	"require-dev": {
 	},
@@ -22,11 +22,5 @@
 		"psr-4": {
 			"Bolt\\GeoJson\\": "src"
 		}
-	},
-	"repositories": [
-		{
-			"type": "vcs",
-			"url": "https://github.com/irwtdvoys/bolt-core"
-		}
-	]
+	}
 }
