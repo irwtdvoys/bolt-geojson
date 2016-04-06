@@ -29,5 +29,10 @@
 
 			return $points;
 		}
+
+		public function add(LinearRing $ring)
+		{
+			$this->coordinates[] = $ring;
+		}
 	}
 ?>
