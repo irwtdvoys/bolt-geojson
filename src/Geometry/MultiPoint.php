@@ -9,7 +9,7 @@
 		{
 			parent::__construct($data);
 
-			if ($data !== false)
+			if ($data !== null)
 			{
 				foreach ($this->coordinates as &$next)
 				{
