@@ -22,5 +22,10 @@
 		{
 			return $this->coordinates;
 		}
+
+		public function add(Point $point)
+		{
+			$this->coordinates[] = $point;
+		}
 	}
 ?>
