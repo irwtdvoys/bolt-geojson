@@ -29,5 +29,10 @@
 
 			return $points;
 		}
+
+		public function add(LineString $lineString)
+		{
+			$this->coordinates[] = $lineString;
+		}
 	}
 ?>
