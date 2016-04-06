@@ -9,7 +9,7 @@
 		{
 			parent::__construct($data);
 
-			if ($data !== false)
+			if ($data !== null)
 			{
 				foreach ($this->coordinates as &$next)
 				{
@@ -21,6 +21,11 @@
 		public function points()
 		{
 			return $this->coordinates;
+		}
+
+		public function add(Point $point)
+		{
+			$this->coordinates[] = $point;
 		}
 	}
 ?>
