@@ -11,9 +11,9 @@
 
 		public function __construct($data = null)
 		{
-			parent::__construct($data);
-
 			$this->properties = new \stdClass();
+
+			parent::__construct($data);
 
 			if ($this->geometry !== null)
 			{
