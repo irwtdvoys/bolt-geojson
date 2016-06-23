@@ -29,5 +29,10 @@
 
 			return $points;
 		}
+
+		public function add(Polygon $polygon)
+		{
+			$this->coordinates[] = $polygon;
+		}
 	}
 ?>
