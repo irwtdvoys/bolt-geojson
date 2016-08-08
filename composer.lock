@@ -4,21 +4,21 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "091143a86ae7198a1f88a93b0130eda6",
-    "content-hash": "9f0b4bb252b5f24f193790adea3e815b",
+    "hash": "f1bc40f71f1e6b95aa1d31e0a3c4a166",
+    "content-hash": "c79d6c90e743ac49c1abf7131d088e8b",
     "packages": [
         {
             "name": "cruxoft/bolt-core",
-            "version": "v0.1.1",
+            "version": "0.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/irwtdvoys/bolt-core.git",
-                "reference": "ad761a3c512dfdf526bd310612ca1ae16d11d77e"
+                "reference": "4267dc4f4433d079142327679c3d3a29f4ea513c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/irwtdvoys/bolt-core/zipball/ad761a3c512dfdf526bd310612ca1ae16d11d77e",
-                "reference": "ad761a3c512dfdf526bd310612ca1ae16d11d77e",
+                "url": "https://api.github.com/repos/irwtdvoys/bolt-core/zipball/4267dc4f4433d079142327679c3d3a29f4ea513c",
+                "reference": "4267dc4f4433d079142327679c3d3a29f4ea513c",
                 "shasum": ""
             },
             "require": {
@@ -30,7 +30,7 @@
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "Bolt\\": "src/Bolt/"
+                    "Bolt\\": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -45,9 +45,10 @@
             ],
             "description": "Core elements for the Bolt Framework",
             "keywords": [
+                "bolt",
                 "framework"
             ],
-            "time": "2016-04-03 21:29:10"
+            "time": "2016-08-02 08:37:46"
         }
     ],
     "packages-dev": [],
