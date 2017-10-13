@@ -9,6 +9,8 @@
 		public $geometry;
 		public $properties;
 
+		public $id = null;
+
 		public function __construct($data = null)
 		{
 			$this->properties = new \stdClass();
