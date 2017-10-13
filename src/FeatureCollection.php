@@ -6,13 +6,19 @@
 	class FeatureCollection extends Base
 	{
 		public $type;
-		public $features;
+		public $features = array();
 
 		public function __construct($data = null)
 		{
 			parent::__construct($data);
 
-			$this->features = array();
+            if (!empty($this->features))
+            {
+            	foreach ($this->features as &$feature)
+				{
+                    $feature = new Feature($feature);
+				}
+            }
 
 			$this->type = $this->className(false);
 		}
