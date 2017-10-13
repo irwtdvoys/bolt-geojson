@@ -8,14 +8,16 @@
 	{
 		public $lat = 0;
 		public $lng = 0;
+		public $alt = null;
 
 		public function __construct($data = null)
 		{
-			if (Arrays::type($data) == "numeric" && count($data) == 2)
+			if (Arrays::type($data) == "numeric" && count($data) >= 2)
 			{
 				$data = array(
 					"lat" => $data[1],
-					"lng" => $data[0]
+					"lng" => $data[0],
+					"alt" => isset($data[2]) ? $data[2] : null
 				);
 			}
 
@@ -27,7 +29,17 @@
 
 		public function toJson($type = "api")
 		{
-			return json_encode(array($this->lng, $this->lat));
+			$output = array(
+				$this->lng,
+				$this->lat
+			);
+
+			if ($this->alt !== null)
+			{
+				$output[] = $this->alt;
+			}
+
+			return json_encode($output);
 		}
 	}
 ?>
