@@ -7,12 +7,9 @@
 	{
 		public function __construct($data = null)
 		{
-			parent::__construct($data);
+			$this->coordinates(new Position());
 
-			if ($data !== null)
-			{
-				$this->coordinates(new Position($this->coordinates));
-			}
+			parent::__construct($data);
 		}
 
 		public function lat($value = null)
