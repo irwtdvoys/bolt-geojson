@@ -22,9 +22,6 @@
 			}
 
 			parent::__construct($data);
-
-			$this->lat = (float)$this->lat;
-			$this->lng = (float)$this->lng;
 		}
 
 		public function toJson($type = "api")
@@ -40,6 +37,30 @@
 			}
 
 			return json_encode($output);
+		}
+
+		public function lat($value = null)
+		{
+			if ($value === null)
+			{
+				return $this->lat;
+			}
+
+			$this->lat = (float)$value;
+
+			return true;
+		}
+
+		public function lng($value = null)
+		{
+			if ($value === null)
+			{
+				return $this->lng;
+			}
+
+			$this->lng = (float)$value;
+
+			return true;
 		}
 	}
 ?>
