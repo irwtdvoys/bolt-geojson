@@ -1,7 +1,7 @@
 <?php
 	namespace Bolt\GeoJson;
 
-	use \Bolt\Base;
+	use Bolt\Base;
 
 	class Feature extends Base
 	{

@@ -1,8 +1,8 @@
 <?php
 	namespace Bolt\GeoJson\Geometry;
 
-	use \Bolt\Base;
-	use \Bolt\Arrays;
+	use Bolt\Base;
+	use Bolt\Arrays;
 
 	class Position extends Base
 	{

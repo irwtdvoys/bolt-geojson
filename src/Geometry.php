@@ -1,8 +1,8 @@
 <?php
 	namespace Bolt\GeoJson;
 
-	use \Bolt\Base;
-	use \Bolt\Arrays;
+	use Bolt\Base;
+	use Bolt\Arrays;
 
 	abstract class Geometry extends Base
 	{
@@ -19,6 +19,7 @@
 			}
 
 			parent::__construct($data);
+
 			$this->type = $this->className(false);
 		}
 

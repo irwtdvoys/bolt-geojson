@@ -1,7 +1,7 @@
 <?php
 	namespace Bolt\GeoJson\Geometry;
 
-	use \Bolt\GeoJson\Geometry;
+	use Bolt\GeoJson\Geometry;
 
 	class MultiPoint extends Geometry
 	{
