@@ -1,6 +1,9 @@
 <?php
 	namespace Bolt\GeoJson\Geometry;
 
+	use Bolt\Exceptions\Codes\GeoJson as Codes;
+	use Bolt\Exceptions\GeoJson as Exception;
+
 	class LinearRing extends MultiPoint
 	{
 		public function __construct($data = null)
@@ -11,12 +14,12 @@
 			{
 				if (count($this->coordinates) < 4)
 				{
-					throw new \Exception("LinearRing requires at least 4 points");
+					throw new Exception(Codes::LINEAR_RING_REQUIRES_AT_LEAST_4_POINTS);
 				}
 
 				if ($this->first() != $this->last())
 				{
-					throw new \Exception("First and last points must match");
+					throw new Exception(Codes::LINEAR_RING_FIRST_AND_LAST_POINTS_DONT_MATCH);
 				}
 			}
 		}

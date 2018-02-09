@@ -1,6 +1,9 @@
 <?php
 	namespace Bolt\GeoJson\Geometry;
 
+	use Bolt\Exceptions\Codes\GeoJson as Codes;
+	use Bolt\Exceptions\GeoJson as Exception;
+
 	class Envelope extends MultiPoint
 	{
 		public function __construct($data = null)
@@ -19,7 +22,7 @@
 			{
 				if (count($this->coordinates) != 2)
 				{
-					throw new \Exception("Envelope requires at 2 points");
+					throw new Exception(Codes::ENVELOPE_REQUIRES_2_POINTS);
 				}
 			}
 		}

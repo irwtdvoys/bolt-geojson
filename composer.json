@@ -23,7 +23,7 @@
 	"suggest": {},
 	"autoload": {
 		"psr-4": {
-			"Bolt\\GeoJson\\": "src"
+			"Bolt\\": "src"
 		}
 	}
 }
