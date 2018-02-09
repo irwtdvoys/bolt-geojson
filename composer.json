@@ -14,7 +14,6 @@
 		}
 	],
 	"require": {
-		"php": ">=5.6",
 		"cruxoft/bolt-core": "^0.3"
 	},
 	"require-dev": {
@@ -23,7 +22,7 @@
 	"suggest": {},
 	"autoload": {
 		"psr-4": {
-			"Bolt\\GeoJson\\": "src"
+			"Bolt\\": "src"
 		}
 	}
 }

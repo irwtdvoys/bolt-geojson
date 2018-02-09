@@ -1,9 +1,9 @@
 <?php
 	namespace Bolt\GeoJson\Geometry;
 
-	use \Bolt\GeoJson\Geometry;
+	use Bolt\GeoJson\Geometry;
 
-	class MultiLineString extends Geometry
+	class Polygon extends Geometry
 	{
 		public function __construct($data = null)
 		{
@@ -13,7 +13,7 @@
 			{
 				foreach ($this->coordinates as &$next)
 				{
-					$next = new LineString($next);
+					$next = new LinearRing($next);
 				}
 			}
 		}
@@ -22,17 +22,17 @@
 		{
 			$points = array();
 
-			foreach ($this->coordinates as $lineString)
+			foreach ($this->coordinates as $linearRing)
 			{
-				$points = array_merge($points, $lineString->points());
+				$points = array_merge($points, $linearRing->points());
 			}
 
 			return $points;
 		}
 
-		public function add(LineString $lineString)
+		public function add(LinearRing $ring)
 		{
-			$this->coordinates[] = $lineString;
+			$this->coordinates[] = $ring;
 		}
 	}
 ?>
