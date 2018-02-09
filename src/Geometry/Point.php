@@ -1,7 +1,7 @@
 <?php
 	namespace Bolt\GeoJson\Geometry;
 
-	use \Bolt\GeoJson\Geometry;
+	use Bolt\GeoJson\Geometry;
 
 	class Point extends Geometry
 	{
@@ -11,7 +11,7 @@
 
 			if ($data !== null)
 			{
-				$this->coordinates = new Position($this->coordinates);
+				$this->coordinates(new Position($this->coordinates));
 			}
 		}
 
@@ -19,7 +19,8 @@
 		{
 			if ($value !== null)
 			{
-				$this->coordinates->lat = $value;
+				$this->coordinates->lat($value);
+
 				return true;
 			}
 
@@ -30,7 +31,8 @@
 		{
 			if ($value !== null)
 			{
-				$this->coordinates->lng = $value;
+				$this->coordinates->lng($value);
+
 				return true;
 			}
 
