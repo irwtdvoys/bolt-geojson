@@ -1,1 +1,1 @@
-#Bolt-GeoJSON (v0.4.2)
+#Bolt-GeoJSON (v0.4.3)
