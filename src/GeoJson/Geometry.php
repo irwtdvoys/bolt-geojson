@@ -23,6 +23,33 @@
 			$this->type = $this->className(false);
 		}
 
+		protected function populate($data)
+		{
+			$properties = $this->getProperties();
+
+			if (count($properties) > 0)
+			{
+				foreach ($properties as $property)
+				{
+					if (is_array($data))
+					{
+						$value = isset($data[$property->name]) ? $data[$property->name] : null;
+					}
+					else
+					{
+						$value = isset($data->{$property->name}) ? $data->{$property->name} : null;
+					}
+
+					if ($value !== null)
+					{
+						$this->{$property->name}($value);
+					}
+				}
+			}
+
+			return true;
+		}
+
 		public function toJson($type = "full")
 		{
 			$properties = $this->getProperties();
