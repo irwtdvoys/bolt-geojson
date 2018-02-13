@@ -40,5 +40,24 @@
 		{
 			return array($this);
 		}
+
+		public function coordinates($data = null)
+		{
+			if ($data === null)
+			{
+				return $this->coordinates;
+			}
+
+			if (is_array($data))
+			{
+				$this->coordinates = new Position($data);
+			}
+			else
+			{
+				$this->coordinates = $data;
+			}
+
+			return true;
+		}
 	}
 ?>
