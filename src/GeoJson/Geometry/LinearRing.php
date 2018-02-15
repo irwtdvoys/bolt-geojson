@@ -14,12 +14,12 @@
 			{
 				if (count($this->coordinates) < 4)
 				{
-					throw new Exception(Codes::LINEAR_RING_REQUIRES_AT_LEAST_4_POINTS);
+					throw new Exception("Linear Ring requires at least 4 points", Codes::INVALID_POINTS);
 				}
 
 				if ($this->first() != $this->last())
 				{
-					throw new Exception(Codes::LINEAR_RING_FIRST_AND_LAST_POINTS_DONT_MATCH);
+					throw new Exception("Linear Ring first and last points don't match", Codes::INVALID_POINTS);
 				}
 			}
 		}

@@ -22,7 +22,7 @@
 			{
 				if (count($this->coordinates) != 2)
 				{
-					throw new Exception(Codes::ENVELOPE_REQUIRES_2_POINTS);
+					throw new Exception("Envelope requires at least 2 points", Codes::INVALID_POINTS);
 				}
 			}
 		}

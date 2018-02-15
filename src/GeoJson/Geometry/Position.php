@@ -1,8 +1,10 @@
 <?php
 	namespace Bolt\GeoJson\Geometry;
 
-	use Bolt\Base;
 	use Bolt\Arrays;
+	use Bolt\Base;
+	use Bolt\Exceptions\Codes\GeoJson as Codes;
+	use Bolt\Exceptions\GeoJson as Exception;
 
 	class Position extends Base
 	{
@@ -46,6 +48,11 @@
 				return $this->lat;
 			}
 
+			if ($value > 90 || $value < -90)
+			{
+				throw new Exception("Latitude must be between 90 and -90", Codes::INVALID_COORDINATES);
+			}
+
 			$this->lat = (float)$value;
 
 			return true;
@@ -56,6 +63,11 @@
 			if ($value === null)
 			{
 				return $this->lng;
+			}
+
+			if ($value > 180 || $value < -180)
+			{
+				throw new Exception("Longitude must be between 180 and -180", Codes::INVALID_COORDINATES);
 			}
 
 			$this->lng = (float)$value;
