@@ -14,7 +14,7 @@
 			{
 				if (count($this->coordinates) < 2)
 				{
-					throw new Exception(Codes::LINE_STRING_REQUIRES_AT_LEAST_2_POINTS);
+					throw new Exception("Line String requires at least 2 points", Codes::INVALID_POINTS);
 				}
 			}
 		}
