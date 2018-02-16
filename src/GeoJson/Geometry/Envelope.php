@@ -80,5 +80,53 @@
 
 			return new Polygon(array($ring));
 		}
+
+		public function top($data = null)
+		{
+			if ($data === null)
+			{
+				return $this->coordinates[0]->lat();
+			}
+
+			$this->coordinates[0]->lat($data);
+
+			return true;
+		}
+
+		public function bottom($data = null)
+		{
+			if ($data === null)
+			{
+				return $this->coordinates[1]->lat();
+			}
+
+			$this->coordinates[1]->lat($data);
+
+			return true;
+		}
+
+		public function left($data = null)
+		{
+			if ($data === null)
+			{
+				return $this->coordinates[0]->lng();
+			}
+
+			$this->coordinates[0]->lng($data);
+
+			return true;
+		}
+
+		public function right($data = null)
+		{
+			if ($data === null)
+			{
+				return $this->coordinates[1]->lng();
+			}
+
+			$this->coordinates[1]->lng($data);
+
+			return true;
+		}
 	}
 ?>
