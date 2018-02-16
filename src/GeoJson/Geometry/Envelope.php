@@ -38,22 +38,22 @@
 			}
 			else
 			{
-				if ($this->coordinates[0]->lng() - $point->lng() <= 180 && $this->coordinates[0]->lng() - $point->lng() >= 0)
+				if ($this->left() - $point->lng() <= 180 && $this->left() - $point->lng() >= 0)
 				{
-					$this->coordinates[0]->lng($point->lng());
+					$this->left($point->lng());
 				}
-				elseif ($point->lng() - $this->coordinates[1]->lng() <= 180 && $point->lng() - $this->coordinates[1]->lng() >= 0)
+				elseif ($point->lng() - $this->right() <= 180 && $point->lng() - $this->right() >= 0)
 				{
-					$this->coordinates[1]->lng($point->lng());
+					$this->right($point->lng());
 				}
 
-				if ($this->coordinates[1]->lat() - $point->lat() <= 90 && $this->coordinates[1]->lat() - $point->lat() >= 0)
+				if ($this->bottom() - $point->lat() <= 90 && $this->bottom() - $point->lat() >= 0)
 				{
-					$this->coordinates[1]->lat($point->lat());
+					$this->bottom($point->lat());
 				}
-				elseif ($point->lat() - $this->coordinates[0]->lat() <= 90 && $point->lat() - $this->coordinates[0]->lat() >= 0)
+				elseif ($point->lat() - $this->top() <= 90 && $point->lat() - $this->top() >= 0)
 				{
-					$this->coordinates[0]->lat($point->lat());
+					$this->top($point->lat());
 				}
 			}
 		}
@@ -61,8 +61,8 @@
 		public function toPoint()
 		{
 			$point = array(
-				$this->coordinates[0]->lng() + (($this->coordinates[1]->lng() - $this->coordinates[0]->lng()) / 2),
-				$this->coordinates[1]->lat() + (($this->coordinates[0]->lat() - $this->coordinates[1]->lat()) / 2)
+				$this->left() + (($this->right() - $this->left()) / 2),
+				$this->bottom() + (($this->top() - $this->bottom()) / 2)
 			);
 
 			return new Point($point);
@@ -71,14 +71,62 @@
 		public function toPolygon()
 		{
 			$ring = array(
-				array($this->coordinates[0]->lng(), $this->coordinates[0]->lat()),
-				array($this->coordinates[1]->lng(), $this->coordinates[0]->lat()),
-				array($this->coordinates[1]->lng(), $this->coordinates[1]->lat()),
-				array($this->coordinates[0]->lng(), $this->coordinates[1]->lat()),
-				array($this->coordinates[0]->lng(), $this->coordinates[0]->lat())
+				array($this->left(), $this->top()),
+				array($this->right(), $this->top()),
+				array($this->right(), $this->bottom()),
+				array($this->left(), $this->bottom()),
+				array($this->left(), $this->top())
 			);
 
 			return new Polygon(array($ring));
+		}
+
+		public function top($data = null)
+		{
+			if ($data === null)
+			{
+				return $this->coordinates[0]->lat();
+			}
+
+			$this->coordinates[0]->lat($data);
+
+			return true;
+		}
+
+		public function bottom($data = null)
+		{
+			if ($data === null)
+			{
+				return $this->coordinates[1]->lat();
+			}
+
+			$this->coordinates[1]->lat($data);
+
+			return true;
+		}
+
+		public function left($data = null)
+		{
+			if ($data === null)
+			{
+				return $this->coordinates[0]->lng();
+			}
+
+			$this->coordinates[0]->lng($data);
+
+			return true;
+		}
+
+		public function right($data = null)
+		{
+			if ($data === null)
+			{
+				return $this->coordinates[1]->lng();
+			}
+
+			$this->coordinates[1]->lng($data);
+
+			return true;
 		}
 	}
 ?>
