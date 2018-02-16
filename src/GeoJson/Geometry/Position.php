@@ -26,7 +26,7 @@
 			parent::__construct($data);
 		}
 
-		public function toJson($type = "api")
+		public function toJson()
 		{
 			$output = array(
 				$this->lng,
