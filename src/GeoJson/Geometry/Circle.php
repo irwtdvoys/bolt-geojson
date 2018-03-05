@@ -5,6 +5,8 @@
 	{
 		public $radius;
 
+		const EARTH = 6378137;
+
 		public function toEnvelope()
 		{
 			$earth = 6378137;
