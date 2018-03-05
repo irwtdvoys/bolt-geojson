@@ -5,13 +5,13 @@
 	{
 		public $radius;
 
+		const EARTH = 6378137;
+
 		public function toEnvelope()
 		{
-			$earth = 6378137;
-
 			$delta = array(
-				"lat" => $this->radius / $earth,
-				"lng" => $this->radius / ($earth * cos(deg2rad($this->coordinates->lat)))
+				"lat" => $this->radius / self::EARTH,
+				"lng" => $this->radius / (self::EARTH * cos(deg2rad($this->coordinates->lat)))
 			);
 
 			$envelope = array(
