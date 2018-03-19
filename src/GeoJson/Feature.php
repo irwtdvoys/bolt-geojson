@@ -17,12 +17,6 @@
 
 			parent::__construct($data);
 
-			if ($this->geometry !== null)
-			{
-				$geometry = "Bolt\\GeoJson\\Geometry\\" . $this->geometry->type;
-				$this->geometry = new $geometry($this->geometry);
-			}
-
 			$this->type = $this->className(false);
 		}
 
