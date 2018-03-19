@@ -76,5 +76,19 @@
 
 			return json_encode($results);
 		}
+
+		public function geometry($data = null)
+		{
+			if ($data === null)
+			{
+				return $this->geometry;
+			}
+
+			$className = "\\Bolt\\GeoJson\\Geometry\\" . $data->type;
+
+			$this->geometry = new $className($data);
+
+			return true;
+		}
 	}
 ?>
