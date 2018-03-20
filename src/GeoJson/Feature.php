@@ -13,7 +13,7 @@
 
 		public function __construct($data = null)
 		{
-			$this->properties = new \stdClass();
+			$this->properties = new Properties($data->properties);
 
 			parent::__construct($data);
 
