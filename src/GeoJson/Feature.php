@@ -13,7 +13,7 @@
 
 		public function __construct($data = null)
 		{
-			$this->properties = new \stdClass();
+			$this->properties = new Properties($data->properties);
 
 			parent::__construct($data);
 
@@ -81,6 +81,18 @@
 			$className = "\\Bolt\\GeoJson\\Geometry\\" . $data->type;
 
 			$this->geometry = new $className($data);
+
+			return true;
+		}
+
+		public function properties(\stdClass $data = null)
+		{
+			if ($data === null)
+			{
+				return $this->properties->properties;
+			}
+
+			$this->properties->properties($data);
 
 			return true;
 		}
