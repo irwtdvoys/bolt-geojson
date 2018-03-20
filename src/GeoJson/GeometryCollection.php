@@ -75,5 +75,10 @@
 
 			return json_encode($results);
 		}
+
+		public function add(Geometry $geometry)
+		{
+			$this->geometries[] = $geometry;
+		}
 	}
 ?>
