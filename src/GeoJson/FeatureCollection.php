@@ -73,5 +73,10 @@
 
 			return json_encode($results);
 		}
+
+		public function add(Feature $feature)
+		{
+			$this->features[] = $feature;
+		}
 	}
 ?>
