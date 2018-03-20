@@ -3,20 +3,22 @@
 
 	use Bolt\Base;
 
-	class FeatureCollection extends Base
+	class GeometryCollection extends Base
 	{
 		public $type;
-		public $features = array();
+		public $geometries = array();
 
 		public function __construct($data = null)
 		{
 			parent::__construct($data);
 
-            if (!empty($this->features))
+            if (!empty($this->geometries))
             {
-            	foreach ($this->features as &$feature)
+            	foreach ($this->geometries as &$geometry)
 				{
-                    $feature = new Feature($feature);
+					$className = "\\Bolt\\GeoJson\\Geometry\\" . $geometry->type;
+
+					$geometry = new $className($geometry);
 				}
             }
 
@@ -74,9 +76,9 @@
 			return json_encode($results);
 		}
 
-		public function add(Feature $feature)
+		public function add(Geometry $geometry)
 		{
-			$this->features[] = $feature;
+			$this->geometries[] = $geometry;
 		}
 	}
 ?>
