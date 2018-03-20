@@ -17,6 +17,18 @@
 			return json_encode($this->properties);
 		}
 
+		public function properties(\stdClass $data = null)
+		{
+			if ($data === null)
+			{
+				return $this->properties;
+			}
+
+			$this->properties = $data;
+
+			return true;
+		}
+
 		public function __call($name, $args)
 		{
 			if ($args == array())

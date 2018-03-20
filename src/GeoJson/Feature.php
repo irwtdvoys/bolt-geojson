@@ -84,5 +84,17 @@
 
 			return true;
 		}
+
+		public function properties(\stdClass $data = null)
+		{
+			if ($data === null)
+			{
+				return $this->properties->properties;
+			}
+
+			$this->properties->properties($data);
+
+			return true;
+		}
 	}
 ?>
