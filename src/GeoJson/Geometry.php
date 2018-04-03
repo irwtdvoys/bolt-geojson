@@ -33,16 +33,16 @@
 				{
 					if (is_array($data))
 					{
-						$value = isset($data[$property->name]) ? $data[$property->name] : null;
+						$value = isset($data[$property]) ? $data[$property] : null;
 					}
 					else
 					{
-						$value = isset($data->{$property->name}) ? $data->{$property->name} : null;
+						$value = isset($data->{$property}) ? $data->{$property} : null;
 					}
 
 					if ($value !== null)
 					{
-						$this->{$property->name}($value);
+						$this->{$property}($value);
 					}
 				}
 			}
@@ -56,11 +56,11 @@
 
 			foreach ($properties as $property)
 			{
-				$value = $this->{$property->name};
+				$value = $this->{$property};
 
 				if ($value !== null)
 				{
-					$subType = ($property->name == "coordinates") ? "simple" : "full";
+					$subType = ($property == "coordinates") ? "simple" : "full";
 
 					if (is_array($value))
 					{
@@ -88,7 +88,7 @@
 
 					if ($value !== null)
 					{
-						$results[$property->name] = $value;
+						$results[$property] = $value;
 					}
 				}
 			}
