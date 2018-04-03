@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "348669aa127eb1b8b9cb6b246173bf1b",
+    "content-hash": "8e88da65d25262c0fd6a3ed60dc95415",
     "packages": [
         {
             "name": "cruxoft/bolt-core",
-            "version": "0.5.4",
+            "version": "0.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/irwtdvoys/bolt-core.git",
-                "reference": "645982c1ee5c82aa045d7cfdc1d8fcbe42e3a8f9"
+                "reference": "9766ae41597828d4f3f27ab5b3dd0cdb71bdf833"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/irwtdvoys/bolt-core/zipball/645982c1ee5c82aa045d7cfdc1d8fcbe42e3a8f9",
-                "reference": "645982c1ee5c82aa045d7cfdc1d8fcbe42e3a8f9",
+                "url": "https://api.github.com/repos/irwtdvoys/bolt-core/zipball/9766ae41597828d4f3f27ab5b3dd0cdb71bdf833",
+                "reference": "9766ae41597828d4f3f27ab5b3dd0cdb71bdf833",
                 "shasum": ""
             },
             "require": {
@@ -47,7 +47,7 @@
                 "bolt",
                 "framework"
             ],
-            "time": "2018-03-09T11:23:09+00:00"
+            "time": "2018-04-03T11:11:47+00:00"
         }
     ],
     "packages-dev": [
@@ -1271,16 +1271,16 @@
         },
         {
             "name": "symfony/yaml",
-            "version": "v3.4.6",
+            "version": "v3.4.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/yaml.git",
-                "reference": "6af42631dcf89e9c616242c900d6c52bd53bd1bb"
+                "reference": "a42f9da85c7c38d59f5e53f076fe81a091f894d0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/yaml/zipball/6af42631dcf89e9c616242c900d6c52bd53bd1bb",
-                "reference": "6af42631dcf89e9c616242c900d6c52bd53bd1bb",
+                "url": "https://api.github.com/repos/symfony/yaml/zipball/a42f9da85c7c38d59f5e53f076fe81a091f894d0",
+                "reference": "a42f9da85c7c38d59f5e53f076fe81a091f894d0",
                 "shasum": ""
             },
             "require": {
@@ -1325,7 +1325,7 @@
             ],
             "description": "Symfony Yaml Component",
             "homepage": "https://symfony.com",
-            "time": "2018-02-16T09:50:28+00:00"
+            "time": "2018-04-03T05:14:20+00:00"
         },
         {
             "name": "webmozart/assert",
