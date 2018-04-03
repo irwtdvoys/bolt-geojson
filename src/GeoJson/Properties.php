@@ -9,7 +9,7 @@
 
 		public function __construct(\stdClass $data = null)
 		{
-			$this->properties = $data;
+			$this->properties = ($data === null) ? new \stdClass() : $data;
 		}
 
 		public function toJson($type = "full")
