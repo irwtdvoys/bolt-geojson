@@ -38,7 +38,7 @@
 				$output[] = $this->alt;
 			}
 
-			return json_encode($output);
+			return Json::encode($output);
 		}
 
 		public function lat($value = null)
