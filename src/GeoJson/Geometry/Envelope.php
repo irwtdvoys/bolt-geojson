@@ -90,7 +90,7 @@
 
 			$this->coordinates[0]->lat($data);
 
-			return true;
+			return $this;
 		}
 
 		public function bottom($data = null)
@@ -102,7 +102,7 @@
 
 			$this->coordinates[1]->lat($data);
 
-			return true;
+			return $this;
 		}
 
 		public function left($data = null)
@@ -114,7 +114,7 @@
 
 			$this->coordinates[0]->lng($data);
 
-			return true;
+			return $this;
 		}
 
 		public function right($data = null)
@@ -126,7 +126,7 @@
 
 			$this->coordinates[1]->lng($data);
 
-			return true;
+			return $this;
 		}
 	}
 ?>

@@ -2,6 +2,7 @@
 	namespace Bolt\GeoJson;
 
 	use Bolt\Base;
+	use Bolt\Json;
 
 	class Properties extends Base
 	{
@@ -14,7 +15,7 @@
 
 		public function toJson($type = "full")
 		{
-			return json_encode($this->properties);
+			return Json::encode($this->properties);
 		}
 
 		public function properties(\stdClass $data = null)
