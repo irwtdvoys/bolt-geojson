@@ -5,6 +5,7 @@
 	use Bolt\Base;
 	use Bolt\Exceptions\Codes\GeoJson as Codes;
 	use Bolt\Exceptions\GeoJson as Exception;
+	use Bolt\Json;
 
 	class Position extends Base
 	{
@@ -55,7 +56,7 @@
 
 			$this->lat = (float)$value;
 
-			return true;
+			return $this;
 		}
 
 		public function lng($value = null)
@@ -72,7 +73,7 @@
 
 			$this->lng = (float)$value;
 
-			return true;
+			return $this;
 		}
 	}
 ?>

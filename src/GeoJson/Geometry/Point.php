@@ -18,7 +18,7 @@
 			{
 				$this->coordinates->lat($value);
 
-				return true;
+				return $this;
 			}
 
 			return $this->coordinates->lat;
@@ -30,7 +30,7 @@
 			{
 				$this->coordinates->lng($value);
 
-				return true;
+				return $this;
 			}
 
 			return $this->coordinates->lng;
@@ -57,7 +57,7 @@
 				$this->coordinates = $data;
 			}
 
-			return true;
+			return $this;
 		}
 	}
 ?>
