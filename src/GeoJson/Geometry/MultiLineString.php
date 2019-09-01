@@ -33,6 +33,8 @@
 		public function add(LineString $lineString)
 		{
 			$this->coordinates[] = $lineString;
+
+			return $this;
 		}
 	}
 ?>

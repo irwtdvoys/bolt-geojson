@@ -14,10 +14,10 @@
 		}
 	],
 	"require": {
-		"cruxoft/bolt-core": "^0.6"
+		"cruxoft/bolt-json": "^0.3.0"
 	},
 	"require-dev": {
-		"phpunit/phpunit": "5.5.*"
+        "cruxoft/dump": "^0.2.2"
 	},
 	"suggest": {},
 	"autoload": {

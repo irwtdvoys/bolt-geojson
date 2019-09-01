@@ -3,6 +3,7 @@
 
 	use Bolt\Base;
 	use Bolt\Arrays;
+	use Bolt\Json;
 
 	abstract class Geometry extends Base
 	{
@@ -60,7 +61,7 @@
 
 				if ($value !== null)
 				{
-					$subType = ($property == "coordinates") ? "simple" : "full";
+					$subType = ($property === "coordinates") ? "simple" : "full";
 
 					if (is_array($value))
 					{
@@ -68,7 +69,7 @@
 						{
 							if (is_object($element) && get_class($element) != "stdClass")
 							{
-								$element = json_decode($element->toJson($subType));
+								$element = Json::decode($element->toJson($subType));
 							}
 						}
 
@@ -82,7 +83,7 @@
 					{
 						if (get_class($value) != "stdClass")
 						{
-							$value = json_decode($value->toJson($subType));
+							$value = Json::decode($value->toJson($subType));
 						}
 					}
 
@@ -93,12 +94,12 @@
 				}
 			}
 
-			if ($type == "simple")
+			if ($type === "simple")
 			{
 				$results = $results['coordinates'];
 			}
 
-			return json_encode($results);
+			return Json::encode($results);
 		}
 
 		public function toEnvelope()

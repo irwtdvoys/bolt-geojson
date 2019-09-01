@@ -33,6 +33,8 @@
 		public function add(Polygon $polygon)
 		{
 			$this->coordinates[] = $polygon;
+
+			return $this;
 		}
 	}
 ?>
