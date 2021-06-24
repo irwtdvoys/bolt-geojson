@@ -9,9 +9,9 @@
 
 	class Position extends Base
 	{
-		public $lat = 0;
-		public $lng = 0;
-		public $alt = null;
+		public float $lat = 0;
+		public float $lng = 0;
+		public ?float $alt = null;
 
 		public function __construct($data = null)
 		{
@@ -27,7 +27,7 @@
 			parent::__construct($data);
 		}
 
-		public function toJson()
+		public function toJson(): string
 		{
 			$output = array(
 				$this->lng,
@@ -42,7 +42,7 @@
 			return Json::encode($output);
 		}
 
-		public function lat($value = null)
+		public function lat(float $value = null): self
 		{
 			if ($value === null)
 			{
@@ -59,7 +59,7 @@
 			return $this;
 		}
 
-		public function lng($value = null)
+		public function lng(float $value = null): self
 		{
 			if ($value === null)
 			{

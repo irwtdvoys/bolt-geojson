@@ -3,11 +3,11 @@
 
 	class Circle extends Point
 	{
-		public $radius;
+		public int $radius;
 
 		const EARTH = 6378137;
 
-		public function toEnvelope()
+		public function toEnvelope(): Envelope
 		{
 			$delta = array(
 				"lat" => $this->radius / self::EARTH,
@@ -30,14 +30,14 @@
 			return new Envelope($envelope);
 		}
 
-		public function toPoint()
+		public function toPoint(): Point
 		{
 			return new Point(array(
 				"coordinates" => $this->coordinates
 			));
 		}
 
-		public function points()
+		public function points(): array
 		{
 			return array($this->toPoint());
 		}

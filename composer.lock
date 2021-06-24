@@ -4,21 +4,25 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a6f0b65370e9b5ca81f084114acc5699",
+    "content-hash": "30d6004a5509fc317f94c893dfa265cf",
     "packages": [
         {
             "name": "cruxoft/bolt-core",
-            "version": "0.7.0",
+            "version": "0.10.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/irwtdvoys/bolt-core.git",
-                "reference": "3d909285cf63728d1a43a3c66dad5edabc4b7381"
+                "reference": "810d7a3979554fb5da39b6b99aa91c09280d0ebd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/irwtdvoys/bolt-core/zipball/3d909285cf63728d1a43a3c66dad5edabc4b7381",
-                "reference": "3d909285cf63728d1a43a3c66dad5edabc4b7381",
+                "url": "https://api.github.com/repos/irwtdvoys/bolt-core/zipball/810d7a3979554fb5da39b6b99aa91c09280d0ebd",
+                "reference": "810d7a3979554fb5da39b6b99aa91c09280d0ebd",
                 "shasum": ""
+            },
+            "require": {
+                "cruxoft/bolt-support": "^0.4.0",
+                "php": "^7"
             },
             "require-dev": {
                 "cruxoft/dump": "^0.2.2"
@@ -44,29 +48,33 @@
                 "bolt",
                 "framework"
             ],
-            "time": "2019-09-01T11:07:21+00:00"
+            "support": {
+                "issues": "https://github.com/irwtdvoys/bolt-core/issues",
+                "source": "https://github.com/irwtdvoys/bolt-core/tree/0.10.4"
+            },
+            "time": "2020-12-13T20:09:58+00:00"
         },
         {
-            "name": "cruxoft/bolt-json",
-            "version": "0.3.0",
+            "name": "cruxoft/bolt-support",
+            "version": "0.4.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/irwtdvoys/bolt-json.git",
-                "reference": "bfa8f5686e68e35c5e52a836552000b45f027046"
+                "url": "https://github.com/irwtdvoys/bolt-support.git",
+                "reference": "98d2eee0d68795799572850e532f49d6cfbfd4d6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/irwtdvoys/bolt-json/zipball/bfa8f5686e68e35c5e52a836552000b45f027046",
-                "reference": "bfa8f5686e68e35c5e52a836552000b45f027046",
+                "url": "https://api.github.com/repos/irwtdvoys/bolt-support/zipball/98d2eee0d68795799572850e532f49d6cfbfd4d6",
+                "reference": "98d2eee0d68795799572850e532f49d6cfbfd4d6",
                 "shasum": ""
             },
             "require": {
-                "cruxoft/bolt-core": "^0.7.0",
                 "ext-json": "*",
-                "php": "^7"
+                "php": "^7.4"
             },
             "require-dev": {
-                "cruxoft/dump": "^0.2.0"
+                "cruxoft/dump": "^0.2",
+                "phpunit/phpunit": "^9.4"
             },
             "type": "library",
             "autoload": {
@@ -84,12 +92,15 @@
                     "role": "Developer"
                 }
             ],
-            "description": "JSON wrapper library built on the Bolt Framework",
+            "description": "Standalone support library for the Bolt Framework",
             "keywords": [
-                "bolt",
-                "json"
+                "bolt"
             ],
-            "time": "2019-09-01T11:30:04+00:00"
+            "support": {
+                "issues": "https://github.com/irwtdvoys/bolt-support/issues",
+                "source": "https://github.com/irwtdvoys/bolt-support/tree/0.4.0"
+            },
+            "time": "2020-12-13T20:06:55+00:00"
         }
     ],
     "packages-dev": [
@@ -130,6 +141,10 @@
                 }
             ],
             "description": "A system for generating structure information about nested variables for use including screen display",
+            "support": {
+                "issues": "https://github.com/irwtdvoys/dump/issues",
+                "source": "https://github.com/irwtdvoys/dump/tree/master"
+            },
             "time": "2018-03-14T14:14:53+00:00"
         }
     ],
@@ -138,6 +153,9 @@
     "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
-    "platform": [],
-    "platform-dev": []
+    "platform": {
+        "php": "^8.0"
+    },
+    "platform-dev": [],
+    "plugin-api-version": "2.1.0"
 }
