@@ -2,6 +2,7 @@
 	namespace Bolt\GeoJson\Geometry;
 
 	use Bolt\GeoJson\Geometry;
+	use Bolt\GeoJson\Position;
 
 	class Point extends Geometry
 	{
