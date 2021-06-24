@@ -36,7 +36,7 @@
 			return $this->coordinates->lng;
 		}
 
-		public function points()
+		public function points(): array
 		{
 			return array($this);
 		}

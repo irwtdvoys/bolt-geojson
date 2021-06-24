@@ -24,12 +24,12 @@
 			}
 		}
 
-		private function first()
+		private function first(): Point
 		{
 			return $this->coordinates[0];
 		}
 
-		private function last()
+		private function last(): Point
 		{
 			return $this->coordinates[count($this->coordinates) - 1];
 		}

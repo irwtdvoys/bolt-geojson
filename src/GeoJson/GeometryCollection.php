@@ -6,8 +6,9 @@
 
 	class GeometryCollection extends Base
 	{
-		public $type;
-		public $geometries = array();
+		public string $type;
+		/** @var Geometry[] */
+		public array $geometries = array();
 
 		public function __construct($data = null)
 		{
@@ -26,7 +27,7 @@
 			$this->type = $this->className(false);
 		}
 
-		public function toJson($type = "full")
+		public function toJson($type = "full"): string
 		{
 			$properties = $this->getProperties();
 
@@ -77,9 +78,11 @@
 			return Json::encode($results);
 		}
 
-		public function add(Geometry $geometry)
+		public function add(Geometry $geometry): self
 		{
 			$this->geometries[] = $geometry;
+
+			return $this;
 		}
 	}
 ?>

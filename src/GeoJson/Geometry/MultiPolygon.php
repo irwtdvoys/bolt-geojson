@@ -18,7 +18,7 @@
 			}
 		}
 
-		public function points()
+		public function points(): array
 		{
 			$points = array();
 
@@ -30,7 +30,7 @@
 			return $points;
 		}
 
-		public function add(Polygon $polygon)
+		public function add(Polygon $polygon): self
 		{
 			$this->coordinates[] = $polygon;
 

@@ -3,22 +3,23 @@
 
 	use Bolt\Base;
 	use Bolt\Json;
+	use stdClass;
 
 	class Properties extends Base
 	{
-		public $properties;
+		public stdClass $properties;
 
-		public function __construct(\stdClass $data = null)
+		public function __construct(stdClass $data = null)
 		{
-			$this->properties = ($data === null) ? new \stdClass() : $data;
+			$this->properties = ($data === null) ? new stdClass() : $data;
 		}
 
-		public function toJson($type = "full")
+		public function toJson(string $type = "full"): string
 		{
 			return Json::encode($this->properties);
 		}
 
-		public function properties(\stdClass $data = null)
+		public function properties(stdClass $data = null)
 		{
 			if ($data === null)
 			{
@@ -27,7 +28,7 @@
 
 			$this->properties = $data;
 
-			return true;
+			return $this;
 		}
 
 		public function __call($name, $args)
@@ -39,7 +40,7 @@
 
 			$this->properties->$name = $args[0];
 
-			return true;
+			return $this;
 		}
 	}
 ?>

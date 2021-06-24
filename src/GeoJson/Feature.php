@@ -3,14 +3,15 @@
 
 	use Bolt\Base;
 	use Bolt\Json;
+	use stdClass;
 
 	class Feature extends Base
 	{
-		public $type;
-		public $geometry;
-		public $properties;
+		public string $type;
+		public Geometry $geometry;
+		public Properties $properties;
 
-		public $id = null;
+		public ?string $id = null;
 
 		public function __construct($data = null)
 		{
@@ -86,7 +87,7 @@
 			return true;
 		}
 
-		public function properties(\stdClass $data = null)
+		public function properties(stdClass $data = null)
 		{
 			if ($data === null)
 			{
