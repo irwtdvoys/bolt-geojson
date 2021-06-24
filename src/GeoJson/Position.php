@@ -1,5 +1,5 @@
 <?php
-	namespace Bolt\GeoJson\Geometry;
+	namespace Bolt\GeoJson;
 
 	use Bolt\Arrays;
 	use Bolt\Base;
@@ -20,7 +20,7 @@
 				$data = array(
 					"lat" => $data[1],
 					"lng" => $data[0],
-					"alt" => isset($data[2]) ? $data[2] : null
+					"alt" => $data[2] ?? null
 				);
 			}
 
