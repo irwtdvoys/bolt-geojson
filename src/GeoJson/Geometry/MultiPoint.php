@@ -18,16 +18,24 @@
 			}
 		}
 
-		public function points()
+		public function points(): array
 		{
 			return $this->coordinates;
 		}
 
-		public function add(Point $point)
+		public function add(Point $point): self
 		{
 			$this->coordinates[] = $point;
 
 			return $this;
+		}
+
+		public function toLinearRing(): LinearRing
+		{
+			$coordinates = $this->coordinates;
+			$coordinates[] = $this->coordinates[0];
+
+			return new LinearRing($coordinates);
 		}
 	}
 ?>

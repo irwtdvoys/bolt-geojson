@@ -3,6 +3,9 @@
 
 	use Bolt\GeoJson\Geometry;
 
+	/**
+	 * @property LinearRing[] coordinates
+	 */
 	class Polygon extends Geometry
 	{
 		public function __construct($data = null)
@@ -18,7 +21,7 @@
 			}
 		}
 
-		public function points()
+		public function points(): array
 		{
 			$points = array();
 
@@ -30,9 +33,11 @@
 			return $points;
 		}
 
-		public function add(LinearRing $ring)
+		public function add(LinearRing $ring): self
 		{
 			$this->coordinates[] = $ring;
+
+			return $this;
 		}
 	}
 ?>

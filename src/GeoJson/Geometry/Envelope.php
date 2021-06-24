@@ -3,6 +3,7 @@
 
 	use Bolt\Exceptions\Codes\GeoJson as Codes;
 	use Bolt\Exceptions\GeoJson as Exception;
+	use Bolt\GeoJson\Geometry;
 
 	class Envelope extends MultiPoint
 	{
@@ -27,38 +28,45 @@
 			}
 		}
 
-		public function extend(Point $point)
+		public function extend(Geometry $geometry): self
 		{
-			if ($this->coordinates === null)
-			{
-				$this->coordinates = array(
-					new Point(array("coordinates" => array($point->lng(), $point->lat()))),
-					new Point(array("coordinates" => array($point->lng(), $point->lat())))
-				);
-			}
-			else
-			{
-				if ($this->left() - $point->lng() <= 180 && $this->left() - $point->lng() >= 0)
-				{
-					$this->left($point->lng());
-				}
-				elseif ($point->lng() - $this->right() <= 180 && $point->lng() - $this->right() >= 0)
-				{
-					$this->right($point->lng());
-				}
+			$points = $geometry->points();
 
-				if ($this->bottom() - $point->lat() <= 90 && $this->bottom() - $point->lat() >= 0)
+			foreach ($points as $point)
+			{
+				if ($this->coordinates === null)
 				{
-					$this->bottom($point->lat());
+					$this->coordinates = [
+						new Point([$point->lng(), $point->lat()]),
+						new Point([$point->lng(), $point->lat()])
+					];
 				}
-				elseif ($point->lat() - $this->top() <= 90 && $point->lat() - $this->top() >= 0)
+				else
 				{
-					$this->top($point->lat());
+					if ($this->left() - $point->lng() <= 180 && $this->left() - $point->lng() >= 0)
+					{
+						$this->left($point->lng());
+					}
+					elseif ($point->lng() - $this->right() <= 180 && $point->lng() - $this->right() >= 0)
+					{
+						$this->right($point->lng());
+					}
+
+					if ($this->bottom() - $point->lat() <= 90 && $this->bottom() - $point->lat() >= 0)
+					{
+						$this->bottom($point->lat());
+					}
+					elseif ($point->lat() - $this->top() <= 90 && $point->lat() - $this->top() >= 0)
+					{
+						$this->top($point->lat());
+					}
 				}
 			}
+
+			return $this;
 		}
 
-		public function toPoint()
+		public function toPoint(): Point
 		{
 			$point = array(
 				$this->left() + (($this->right() - $this->left()) / 2),
@@ -68,17 +76,17 @@
 			return new Point($point);
 		}
 
-		public function toPolygon()
+		public function toPolygon(): Polygon
 		{
-			$ring = array(
-				array($this->left(), $this->top()),
-				array($this->right(), $this->top()),
-				array($this->right(), $this->bottom()),
-				array($this->left(), $this->bottom()),
-				array($this->left(), $this->top())
-			);
+			$ring = (new MultiPoint())
+				->add(new Point([$this->left(), $this->top()]))
+				->add(new Point([$this->right(), $this->top()]))
+				->add(new Point([$this->right(), $this->bottom()]))
+				->add(new Point([$this->left(), $this->bottom()]))
+				->toLinearRing()
+			;
 
-			return new Polygon(array($ring));
+			return (new Polygon())->add($ring);
 		}
 
 		public function top($data = null)

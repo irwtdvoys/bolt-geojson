@@ -3,11 +3,13 @@
 
 	use Bolt\Base;
 	use Bolt\Arrays;
+	use Bolt\GeoJson\Geometry\Envelope;
+	use Bolt\GeoJson\Geometry\Point;
 	use Bolt\Json;
 
 	abstract class Geometry extends Base
 	{
-		public $type;
+		public string $type;
 		public $coordinates;
 
 		public function __construct($data = null)
@@ -24,7 +26,7 @@
 			$this->type = $this->className(false);
 		}
 
-		protected function populate($data)
+		protected function populate($data): self
 		{
 			$properties = $this->getProperties();
 
@@ -48,7 +50,7 @@
 				}
 			}
 
-			return true;
+			return $this;
 		}
 
 		public function toJson($type = "full")
@@ -102,23 +104,16 @@
 			return Json::encode($results);
 		}
 
-		public function toEnvelope()
+		public function toEnvelope(): Envelope
 		{
-			$envelope = new Geometry\Envelope();
-
-			foreach ($this->points() as $point)
-			{
-				$envelope->extend($point);
-			}
-
-			return $envelope;
+			return (new Envelope())->extend($this);
 		}
 
-		public function toPoint()
+		public function toPoint(): Point
 		{
-			$envelope = $this->toEnvelope();
-
-			return $envelope->toPoint();
+			return $this
+				->toEnvelope()
+				->toPoint();
 		}
 
 		abstract public function points();
